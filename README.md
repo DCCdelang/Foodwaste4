@@ -1,4 +1,3 @@
-
 # Foodwaste4
 Leren en Beslissen
 Groep 4:
@@ -7,6 +6,7 @@ Niek Ijzerman (11318740)
 Jochem Soons (11327030)
 Dante de Lang
 Darius Barsony
+
 Uitleg:
 - Altijd eerst: git pull
 
