@@ -18,4 +18,4 @@ def RGB2GRAY(Imagepath):
     # cv2.imshow("Grayscale image", gray)
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
-return gray
+    return gray
