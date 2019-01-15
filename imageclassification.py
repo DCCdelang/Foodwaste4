@@ -19,3 +19,11 @@ def RGB2GRAY(Imagepath):
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
     return gray
+
+def image_to_matrix(picture):
+
+    imgage = cv2.imread(picture, 0)
+    img_reverted = cv2.bitwise_not(imgage)
+    matrix_image = np.round((img_reverted / 255), 2)
+
+    return matrix_image
