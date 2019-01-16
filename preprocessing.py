@@ -31,8 +31,15 @@ def csv_to_dict(csvfile):
             dic[image.get("Image")] = image.get("Plate Waste"), image.get("Empty Plate"), image.get("Kitchen Waste"),image.get("No Objects")
     return dic
 
-print(csv_to_dict("labels.csv")[0].get('Image'))
+Dictionary = csv_to_dict("labels.csv")
+Dictionary['20190105133933_5ff99ea4-30d1-4e65-87dc-b3ed496c8711.jpg'] = 2013
+print(Dictionary.get('20190105133933_5ff99ea4-30d1-4e65-87dc-b3ed496c8711.jpg'))
 
 
-def main():
+
+
+def main(impath):
+    gray = RGB2GRAY(impath)
+    image_to_matrix(gray)
+
     return
