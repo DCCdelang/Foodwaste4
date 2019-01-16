@@ -9,8 +9,9 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+import csv
 
-#Setting RGB to Grayscale via OpenCV library
+# Setting RGB to Grayscale via OpenCV library
 def RGB2GRAY(Imagepath):
     image = cv2.imread(Imagepath)
     gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
@@ -27,3 +28,13 @@ def image_to_matrix(picture):
     matrix_image = np.round((img_reverted / 255), 2)
 
     return matrix_image
+
+# Setting up csv to dictionary
+def csv_to_dict(csvfile):
+    reader = csv.DictReader(open(csvfile, 'r'))
+    dictionary = []
+    for image in reader:
+        dictionary.append(image)
+    return dictionary
+
+print(csv_to_dict("labels.csv"))
