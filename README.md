@@ -4,7 +4,7 @@ Groep 4:
 Jeroen van Wely (11289988)
 Niek Ijzerman (11318740)
 Jochem Soons (11327030)
-Dante de Lang
+Dante de Lang (11014083)
 Darius Barsony
 
 Uitleg:

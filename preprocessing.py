@@ -32,4 +32,8 @@ def csv_to_dict(csvfile):
             image_to_matrix(picture)
     return dic
 
-print(csv_to_dict("labels.csv"))
+print(csv_to_dict("labels.csv")[0].get('Image'))
+
+
+# def main():
+#     return
