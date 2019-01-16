@@ -1,10 +1,3 @@
-# Foodwaste Group 4
-# Dante de Lang
-# Darius Barsony
-# Niek Ijzerman
-# Jochem Soons
-# Jeroen van Wely
-
 # Importing libraries
 import cv2
 import numpy as np
