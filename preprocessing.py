@@ -24,10 +24,11 @@ def image_to_matrix(picture):
 
 # Setting up csv to dictionary
 def csv_to_dict(csvfile):
-    reader = csv.DictReader(open(csvfile, 'r'))
-    dictionary = []
-    for image in reader:
-        dictionary.append(image)
-    return dictionary
+    with open(csvfile) as fh:
+        reader = csv.DictReader(fh, delimiter = ',')
+        dic = {}
+        for image in reader:
+            dic[image.get("Image")] = image.get("Plate Waste"), image.get("Empty Plate"), image.get("Kitchen Waste"),image.get("No Objects")
+    return dic
 
 print(csv_to_dict("labels.csv"))
