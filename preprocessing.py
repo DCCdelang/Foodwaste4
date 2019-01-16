@@ -28,7 +28,8 @@ def csv_to_dict(csvfile):
         reader = csv.DictReader(fh, delimiter = ',')
         dic = {}
         for image in reader:
-            dic[image.get("Image")] = image.get("Plate Waste"), image.get("Empty Plate"), image.get("Kitchen Waste"),image.get("No Objects")
+            dic[image.get("Image")] = image.get("Plate Waste"), image.get("Empty Plate"), image.get("Kitchen Waste"),image.get("No Objects"), 
+            image_to_matrix(picture)
     return dic
 
 print(csv_to_dict("labels.csv"))
