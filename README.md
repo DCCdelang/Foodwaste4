@@ -1,7 +1,7 @@
 # Foodwaste4
 Leren en Beslissen
 Groep 4:
-Jeroen van Wely
+Jeroen van Wely (11289988)
 Niek Ijzerman (11318740)
 Jochem Soons (11327030)
 Dante de Lang
