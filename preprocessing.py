@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import os
+import glob
 
 
 # Setting RGB to Grayscale via OpenCV library
@@ -25,33 +26,67 @@ def image_to_matrix(picture):
 
     return matrix_image
 
+def all_images_to_matrix_list():
+    img_dir = "20190106_dataset_zero_foodwaste_uva" 
+    data_path = os.path.join(img_dir,'*g')
+    files = glob.glob(data_path)
+    data = []
+    for f1 in files:
+        print(f1)
+        img = cv2.imread(f1, 0)
+        img_reverted = cv2.bitwise_not(img)
+        matrix_image = np.round((img_reverted / 255), 2)
+        data.append(matrix_image)
+    return data
+
+
+# Setting up csv to dictionary
+def csv_to_array(csvfile):
+    data = open(csvfile, 'rt')
+    reader = csv.reader(data)
+    data_array = []
+
+    for row in reader:
+        semi_data = []
+        for i in range(len(row)):
+            semi_data.append(row[i])
+        data_array.append(semi_data)
+        data = data_array[1:]
+
+    return data
+
+#maakt een array met voor elke foto een lijst met: naam foto, vier getallen en matrix van de foto
+# directory is path dat gaat naar map waar de foto's in staan, csvfile is "labels.csv"
+def find_pictures(directory, csvfile):
+    data = csv_to_array(csvfile)
+    i = 0
+
+    for filename in sorted(os.listdir(directory)):
+        if filename.endswith(".jpg"): 
+            matrix = image_to_matrix(filename)
+            data[i].append(matrix)
+            print(i)
+            print(data[i])
+            i += 1
+    return np.asarray(data)
+
+final_data = find_pictures("/Users/NiekIJzerman/Desktop/Beta-Gamma/Jaar-3/Blok-3/Leren en beslissen/git/Foodwaste4/", "labels.csv")
+
+
 # Setting up csv to dictionary
 def csv_to_dict(csvfile):
+    matrix_list = all_images_to_matrix_list()
     with open(csvfile) as fh:
         reader = csv.DictReader(fh, delimiter = ',')
         dic = {}
+        counter = 0
         for image in reader:
             picture = image.get("Image")
-            dic[picture] = image.get("Plate Waste"), image.get("Empty Plate"), image.get("Kitchen Waste"),image.get("No Objects"), image_to_matrix(picture)
+            dic[picture] = image.get("Plate Waste"), image.get("Empty Plate"), image.get("Kitchen Waste"),image.get("No Objects"), matrix_list[counter]
+            counter += 1
     return dic
 
 print(csv_to_dict("labels.csv"))
 
-
-# img_dir = "20190106_dataset_zero_foodwaste_uva"
-# data_path = os.path.join(img_dir,'*g')
-# files = glob.glob(data_path)
-# data = []
-# for f1 in files:
-#     if f1 == picture:
-#         img = cv2.imread(f1)
-#         data.append(img)
-# print(data[0])
-
-
-
-def main(impath):
-    gray = RGB2GRAY(impath)
-    image_to_matrix(gray)
-
-    return
+# def main():
+#     return
