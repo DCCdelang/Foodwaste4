@@ -70,7 +70,7 @@ def find_pictures(directory, csvfile):
             i += 1
     return np.asarray(data)
 
-final_data = find_pictures("/Users/NiekIJzerman/Desktop/Beta-Gamma/Jaar-3/Blok-3/Leren en beslissen/git/Foodwaste4/", "labels.csv")
+final_data = find_pictures("20190106_dataset_zero_foodwaste_uva", "labels.csv")
 
 
 # Setting up csv to dictionary
