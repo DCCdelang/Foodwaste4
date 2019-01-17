@@ -5,7 +5,7 @@ Jeroen van Wely
 Niek Ijzerman (11318740)
 Jochem Soons (11327030)
 Dante de Lang
-Darius Barsony
+Darius Barsony (11234342)
 
 Uitleg:
 - Altijd eerst: git pull
