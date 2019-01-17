@@ -9,8 +9,8 @@ import glob
 
 # Setting RGB to Grayscale via OpenCV library
 # def RGB2GRAY(Imagepath):
-#     image = cv2.imread(Imagepath)
-#     gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+    # image = cv2.imread(Imagepath)
+    # gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 #     # cv2.imshow("Original image", image)
 #     # cv2.imshow("Grayscale image", gray)
 #     # cv2.waitKey(0)
@@ -21,13 +21,14 @@ def image_to_matrix(picture):
     img_dir = "20190106_dataset_zero_foodwaste_uva"
     data_path = os.path.join(img_dir, picture)
     imgage = cv2.imread(data_path)
-    img_reverted = cv2.bitwise_not(imgage)
+    grayimg = cv2.cvtColor(imgage,cv2.COLOR_BGR2GRAY)
+    img_reverted = cv2.bitwise_not(grayimg)
     matrix_image = np.round((img_reverted / 255), 2)
 
     return matrix_image
 
 # def all_images_to_matrix_list():
-#     img_dir = "20190106_dataset_zero_foodwaste_uva" 
+#     img_dir = "20190106_dataset_zero_foodwaste_uva"
 #     data_path = os.path.join(img_dir,'*g')
 #     files = glob.glob(data_path)
 #     data = []
@@ -62,7 +63,7 @@ def find_pictures(directory, csvfile):
     i = 0
 
     for filename in sorted(os.listdir(directory)):
-        if filename.endswith(".jpg"): 
+        if filename.endswith(".jpg"):
             matrix = image_to_matrix(filename)
             data[i].append(matrix)
             i += 1
