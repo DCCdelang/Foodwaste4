@@ -33,7 +33,7 @@ def csv_to_array(csvfile):
 
     return data
 
-#maakt een array met voor elke foto een lijst met: naam foto, vier getallen en matrix van elke foto
+#maakt een array met voor elke foto een lijst met: naam foto, vier getallen en matrix van de foto
 # directory is path dat gaat naar map waar de foto's in staan, csvfile is "labels.csv"
 def find_pictures(directory, csvfile):
     data = csv_to_array(csvfile)
