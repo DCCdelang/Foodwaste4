@@ -8,14 +8,14 @@ import glob
 
 
 # Setting RGB to Grayscale via OpenCV library
-def RGB2GRAY(Imagepath):
-    image = cv2.imread(Imagepath)
-    gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
-    # cv2.imshow("Original image", image)
-    # cv2.imshow("Grayscale image", gray)
-    # cv2.waitKey(0)
-    # cv2.destroyAllWindows()
-    return gray
+# def RGB2GRAY(Imagepath):
+#     image = cv2.imread(Imagepath)
+#     gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+#     # cv2.imshow("Original image", image)
+#     # cv2.imshow("Grayscale image", gray)
+#     # cv2.waitKey(0)
+#     # cv2.destroyAllWindows()
+#     return gray
 
 def image_to_matrix(picture):
     img_dir = "20190106_dataset_zero_foodwaste_uva"
@@ -26,18 +26,18 @@ def image_to_matrix(picture):
 
     return matrix_image
 
-def all_images_to_matrix_list():
-    img_dir = "20190106_dataset_zero_foodwaste_uva" 
-    data_path = os.path.join(img_dir,'*g')
-    files = glob.glob(data_path)
-    data = []
-    for f1 in files:
-        print(f1)
-        img = cv2.imread(f1, 0)
-        img_reverted = cv2.bitwise_not(img)
-        matrix_image = np.round((img_reverted / 255), 2)
-        data.append(matrix_image)
-    return data
+# def all_images_to_matrix_list():
+#     img_dir = "20190106_dataset_zero_foodwaste_uva" 
+#     data_path = os.path.join(img_dir,'*g')
+#     files = glob.glob(data_path)
+#     data = []
+#     for f1 in files:
+#         print(f1)
+#         img = cv2.imread(f1, 0)
+#         img_reverted = cv2.bitwise_not(img)
+#         matrix_image = np.round((img_reverted / 255), 2)
+#         data.append(matrix_image)
+#     return data
 
 
 # Setting up csv to dictionary
@@ -74,17 +74,17 @@ final_data = find_pictures("20190106_dataset_zero_foodwaste_uva", "labels.csv")
 
 
 # Setting up csv to dictionary
-def csv_to_dict(csvfile):
-    matrix_list = all_images_to_matrix_list()
-    with open(csvfile) as fh:
-        reader = csv.DictReader(fh, delimiter = ',')
-        dic = {}
-        counter = 0
-        for image in reader:
-            picture = image.get("Image")
-            dic[picture] = image.get("Plate Waste"), image.get("Empty Plate"), image.get("Kitchen Waste"),image.get("No Objects"), matrix_list[counter]
-            counter += 1
-    return dic
+# def csv_to_dict(csvfile):
+#     matrix_list = all_images_to_matrix_list()
+#     with open(csvfile) as fh:
+#         reader = csv.DictReader(fh, delimiter = ',')
+#         dic = {}
+#         counter = 0
+#         for image in reader:
+#             picture = image.get("Image")
+#             dic[picture] = image.get("Plate Waste"), image.get("Empty Plate"), image.get("Kitchen Waste"),image.get("No Objects"), matrix_list[counter]
+#             counter += 1
+#     return dic
 
 print(csv_to_dict("labels.csv"))
 
