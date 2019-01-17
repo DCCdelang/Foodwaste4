@@ -18,7 +18,7 @@ def RGB2GRAY(Imagepath):
     return gray
 
 def image_to_matrix(picture):
-    img_dir = "20190106_dataset_zero_foodwaste_uva" 
+    img_dir = "20190106_dataset_zero_foodwaste_uva"
     data_path = os.path.join(img_dir, picture)
     imgage = cv2.imread(data_path)
     img_reverted = cv2.bitwise_not(imgage)
