@@ -24,7 +24,6 @@ def image_to_matrix(picture):
     grayimg = cv2.cvtColor(imgage,cv2.COLOR_BGR2GRAY)
     img_reverted = cv2.bitwise_not(grayimg)
     matrix_image = np.round((img_reverted / 255), 2)
-
     return matrix_image
 
 # def all_images_to_matrix_list():
