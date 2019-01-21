@@ -101,6 +101,7 @@ def two_layer_training_no_plot(X, Y, Theta_0, Theta_1, iters=5000, rate=0.9):
     return Theta_0, Theta_1
 
 
+
 def validation_split(data, ratio):
     np.random.shuffle(data)
     split_index = int(round(ratio*len(data)))
@@ -123,8 +124,8 @@ y_val = transform_y(y_val_raw)
 classifier = MLPClassifier(hidden_layer_sizes=(100, 100, 100, 100, 100, 100), activation='relu', solver='adam', max_iter=5000, alpha=0.0001,learning_rate_init=0.001)
 classifier.fit(x_train, y_train) 
 
-prediction_train = classifier.predict(x_train)
-prediction_val = classifier.predict(x_val)
+# prediction_train = classifier.predict(x_train)
+# prediction_val = classifier.predict(x_val)
 
-print('Classifier training score:', validate(prediction_train, y_train))
-print('Classifier validation score:', validate(prediction_val, y_val))
+# print('Classifier training score:', validate(prediction_train, y_train))
+# print('Classifier validation score:', validate(prediction_val, y_val))
