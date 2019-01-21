@@ -69,7 +69,8 @@ def find_pictures(directory, csvfile):
             i += 1
     return np.asarray(data)
 
-# final_data = find_pictures("20190106_dataset_zero_foodwaste_uva", "labels.csv")
+final_data = find_pictures("20190106_dataset_zero_foodwaste_uva", "labels.csv")
+print (final_data)
 
 
 # Setting up csv to dictionary
@@ -85,7 +86,7 @@ def find_pictures(directory, csvfile):
 #             counter += 1
 #     return dic
 
-print(csv_to_array("labels.csv"))
+#ßprint(csv_to_array("labels.csv"))
 
 # def main():
 #     return
