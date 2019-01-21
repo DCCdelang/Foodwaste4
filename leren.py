@@ -189,10 +189,5 @@ classifier.fit(x_train, y_train)
 # prediction_train = classifier.predict(x_train)
 # prediction_val = classifier.predict(x_val)
 
-<<<<<<< HEAD
 # print('Classifier training score:', validate(prediction_train, y_train))
 # print('Classifier validation score:', validate(prediction_val, y_val))
-=======
-print('Classifier training score:', validate(prediction_train, y_train))
-print('Classifier validation score:', validate(prediction_val, y_val))
->>>>>>> 2df1e3ef8f6df5c2746d47a683c138e64ab66623
