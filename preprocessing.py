@@ -71,6 +71,7 @@ def find_pictures(directory, csvfile):
 final_data = find_pictures("20190106_dataset_zero_foodwaste_uva", "labels.csv")
 print (final_data)
 
+
 # Setting up csv to dictionary
 # def csv_to_dict(csvfile):
 #     matrix_list = all_images_to_matrix_list()
