@@ -149,16 +149,16 @@ def transform_result(result):
             transformed_result.append([0, 0, 1])
     return np.asarray(transformed_result)
 
-train, val = validation_split(digits, 0.7)
-x_train, y_train_raw = x_y_split(train)
-x_val, y_val_raw = x_y_split(val)
-y_train = transform_y(y_train_raw)
-y_val = transform_y(y_val_raw)
+# train, val = validation_split(digits, 0.7)
+# x_train, y_train_raw = x_y_split(train)
+# x_val, y_val_raw = x_y_split(val)
+# y_train = transform_y(y_train_raw)
+# y_val = transform_y(y_val_raw)
 
 # ONE LAYER NETWORK
-Theta_one = one_layer_init(64, 3)
-Theta_one_learned = one_layer_training_no_plot(x_train, y_train, Theta_one, iters=1000, rate=0.7)
-Result_one = one_layer_output(x_val, Theta_one_learned)
+# Theta_one = one_layer_init(64, 3)
+# Theta_one_learned = one_layer_training_no_plot(x_train, y_train, Theta_one, iters=1000, rate=0.7)
+# Result_one = one_layer_output(x_val, Theta_one_learned)
 
 # TWO LAYER NETWORK
 # Theta_two = n_layer_init(64, 10, 3)
@@ -168,7 +168,7 @@ Result_one = one_layer_output(x_val, Theta_one_learned)
 # Result_two = n_layer_output(x_val, [Theta_two_0, Theta_two_1])
 # Result_two = transform_result(Result_two)
 
-print('Validation score using one layer network:', validate(Result_one, y_val))
+# print('Validation score using one layer network:', validate(Result_one, y_val))
 # print('Validation score using two layer network:', validate(Result_two, y_val))
 
 # SCIKIT
@@ -176,15 +176,17 @@ print('Validation score using one layer network:', validate(Result_one, y_val))
 from sklearn.neural_network import MLPClassifier
 
 # Create training and validation data
-train, val = validation_split(digits, 0.7)
-x_train, y_train_raw = x_y_split(train)
-x_val, y_val_raw = x_y_split(val)
-y_train = transform_y(y_train_raw)
-y_val = transform_y(y_val_raw)
+
+# train, val = validation_split(digits, 0.7)
+# x_train, y_train_raw = x_y_split(train)
+# x_val, y_val_raw = x_y_split(val)
+# y_train = transform_y(y_train_raw)
+# y_val = transform_y(y_val_raw)
 
 # Create MLPClassifier and calculate validation score
-classifier = MLPClassifier(hidden_layer_sizes=(100, 100, 100, 100, 100, 100), activation='relu', solver='adam', max_iter=5000, alpha=0.0001,learning_rate_init=0.001)
-classifier.fit(x_train, y_train)
+
+# classifier = MLPClassifier(hidden_layer_sizes=(100, 100, 100, 100, 100, 100), activation='relu', solver='adam', max_iter=5000, alpha=0.0001,learning_rate_init=0.001)
+# classifier.fit(x_train, y_train)
 
 # prediction_train = classifier.predict(x_train)
 # prediction_val = classifier.predict(x_val)
