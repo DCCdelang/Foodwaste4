@@ -4,8 +4,8 @@ Groep 4:
 Jeroen van Wely (11289988)
 Niek Ijzerman (11318740)
 Jochem Soons (11327030)
+Darius Barsony (11234342)
 Dante de Lang (11014083)
-Darius Barsony
 
 Uitleg:
 - Altijd eerst: git pull
