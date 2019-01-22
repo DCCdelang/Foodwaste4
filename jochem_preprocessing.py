@@ -17,7 +17,7 @@ def RGB2GRAY(Imagepath):
     return gray
 
 def image_to_matrix(picture):
-    img_dir = "20190106_dataset_zero_foodwaste_uva"
+    img_dir = "Images"
     data_path = os.path.join(img_dir, picture)
     image = cv2.imread(data_path, 0)
     matrix_image = cv2.bitwise_not(image)
@@ -34,23 +34,18 @@ def create_matrix(csvfile):
         row_data = []
         row_data.append(str(row[0]))
         for i in range(1, 5):
-            # print('i:', i)
-            # print('row', int(row[i]))
-            # if i == 1 and int(row[i]) == 1:
-            #     row_data.append(np.array([1, 0, 0, 0]))
+            if i == 1 and int(row[i]) == 1:
+                row_data.append(np.array([1, 0, 0, 0]))
 
-            # elif i == 2 and int(row[i]) == 1:
-            #     row_data.append(np.array([0, 1, 0, 0]))
-
-            # elif i == 3 and int(row[i]) == 1:
-            #     row_data.append(np.array([0, 0, 1, 0]))
-            
-            # elif i == 4 and int(row[i]) == 1:
-            #     row_data.append(np.array([0, 0, 0, 1]))
-            
-            # else:
-            #     print('no label')
-            row_data.append(int(row[i]))
+            elif i == 2 and int(row[i]) == 1:
+                row_data.append(np.array([0, 1, 0, 0]))
+                
+            elif i == 3 and int(row[i]) == 1:
+                row_data.append(np.array([0, 0, 1, 0]))
+                  
+            elif i == 4 and int(row[i]) == 1:
+                row_data.append(np.array([0, 0, 0, 1]))
+                
         row_data.append(image_to_matrix(row[0]))
         data_array.append(row_data)
     return np.asarray(data_array)
@@ -67,20 +62,15 @@ def split_data(data):
     labels = []
     vectors = []
 
-    for datarow in data_matrix:
-        print(datarow[0])
-        print(datarow[1])
-        print(datarow[2])
+    for datarow in data:
         filenames.append(datarow[0])
         labels.append(datarow[1])
         vectors.append(datarow[2])
-    return filenames, labels, vectors
+    return np.array(filenames), np.array(labels), np.array(vectors)
 
-
-    
 data_matrix = create_matrix('labels.csv')
-# print(data_matrix[0])
-training_data, validation_data = validation_split(data_matrix, 0.7)
 
+training_data, validation_data = validation_split(data_matrix, 0.7)
 train_filenames, train_labels, train_vectors = split_data(training_data)
-print(train_vectors)
+valid_filenames, valid_labels, valid_vectors = split_data(validation_data)
+
