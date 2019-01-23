@@ -6,7 +6,6 @@ import os
 # import csv
 # import glob
 
-<<<<<<< HEAD
 def image_to_matrix(picture):
     image = cv2.imread(picture, 0)
     img_reverted = cv2.bitwise_not(image)
