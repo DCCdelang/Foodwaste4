@@ -1,0 +1,6 @@
+model_checkpoint_path: "C:/Users/djdcc_000/Documents/School/UNI/Beta-Gamma/2018-2019/Leren_en_Beslissen/Git/Foodwaste4/Dante\\model_epoch10.ckpt"
+all_model_checkpoint_paths: "C:/Users/djdcc_000/Documents/School/UNI/Beta-Gamma/2018-2019/Leren_en_Beslissen/Git/Foodwaste4/Dante\\model_epoch6.ckpt"
+all_model_checkpoint_paths: "C:/Users/djdcc_000/Documents/School/UNI/Beta-Gamma/2018-2019/Leren_en_Beslissen/Git/Foodwaste4/Dante\\model_epoch7.ckpt"
+all_model_checkpoint_paths: "C:/Users/djdcc_000/Documents/School/UNI/Beta-Gamma/2018-2019/Leren_en_Beslissen/Git/Foodwaste4/Dante\\model_epoch8.ckpt"
+all_model_checkpoint_paths: "C:/Users/djdcc_000/Documents/School/UNI/Beta-Gamma/2018-2019/Leren_en_Beslissen/Git/Foodwaste4/Dante\\model_epoch9.ckpt"
+all_model_checkpoint_paths: "C:/Users/djdcc_000/Documents/School/UNI/Beta-Gamma/2018-2019/Leren_en_Beslissen/Git/Foodwaste4/Dante\\model_epoch10.ckpt"

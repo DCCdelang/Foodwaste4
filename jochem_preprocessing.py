@@ -44,10 +44,10 @@ def create_matrix(csvfile):
             elif i == 3 and int(row[i]) == 1:
                 row_data.append(np.array([0, 0, 1, 0]))
                 break
-            
+
             elif i == 4 and int(row[i]) == 1:
                 row_data.append(np.array([0, 0, 0, 1]))
-        
+
         row_data.append(image_to_matrix(row[0]))
         data_array.append(row_data)
     return np.asarray(data_array)
@@ -60,7 +60,8 @@ def validation_split(data, ratio):
     return set1,set2
 
 def split_data(data):
-    
+ return
 data_matrix = create_matrix('labels.csv')
 print(data_matrix[0][1])
 training_data, validation_data = validation_split(data_matrix, 0.7)
+print(training_data)
