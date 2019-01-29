@@ -42,13 +42,12 @@ def create_matrix(csvfile):
 
             elif i == 2 and int(row[i]) == 1:
                 row_data.append(np.array([0, 1, 0, 0]))
-                
+
             elif i == 3 and int(row[i]) == 1:
                 row_data.append(np.array([0, 0, 1, 0]))
-                  
+
             elif i == 4 and int(row[i]) == 1:
                 row_data.append(np.array([0, 0, 0, 1]))
-        
         row_data.append(image_to_matrix(row[0]))
         data_array.append(row_data)
     return np.asarray(data_array)
@@ -142,3 +141,6 @@ train_Y = transform_labels(train_Y)
 valid_Y = transform_labels(valid_Y)
 
 
+training_data, validation_data = validation_split(data_matrix, 0.7)
+train_filenames, train_labels, train_vectors = split_data(training_data)
+valid_filenames, valid_labels, valid_vectors = split_data(validation_data)
